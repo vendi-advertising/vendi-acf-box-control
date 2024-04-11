@@ -1,6 +1,6 @@
 .flow-control-groups {
     & > .flow-control-group {
-        border: 1px solid #999;
+        border: 1px solid #ccc;
         display: inline-grid;
         grid-template-columns: auto 1px auto;
         align-items: center;
@@ -40,11 +40,14 @@
         }
 
         .preset-container,
-        .side-container {
+        .side-container,
+        .link {
             display: grid;
+            grid-template-rows: 20px 30px;
 
             & > span {
                 text-align: center;
+                font-weight: 500;
             }
         }
 
@@ -88,10 +91,8 @@
         }
 
         .link {
-            aspect-ratio: 1 / 1;
-            display: contents;
-
             & > button {
+                grid-row: 2;
                 display: inline-grid;
                 grid-template-areas: "same";
                 background: none;

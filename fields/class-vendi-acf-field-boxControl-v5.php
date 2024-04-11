@@ -48,15 +48,21 @@ class Vendi_ACF_Field_Box_Control extends acf_field
         ];
 
         $this->sides = [
-            'block' => 'Block',
-            'inline' => 'Inline',
+            'block' => 'Block ↕',
+            'inline' => 'Inline ↔',
+        ];
+
+        $this->devices = [
+            'desktop' => 'Desktop',
+            'tablet' => 'Tablet',
+            'mobile' => 'Mobile',
         ];
 
         // Settings.
         $this->settings = $settings;
 
         $this->env = array(
-            'url'     => site_url( str_replace( ABSPATH, '', __DIR__ ) ), // URL to the acf-FIELD-NAME directory.
+            'url' => site_url(str_replace(ABSPATH, '', __DIR__)), // URL to the acf-FIELD-NAME directory.
             'version' => '1.0.0', // Replace this with your theme or plugin version constant.
         );
 
@@ -202,10 +208,10 @@ class Vendi_ACF_Field_Box_Control extends acf_field
                     value="<?php esc_attr_e($localValue); ?>"
                     name="<?php esc_attr_e($this->getFieldName($field, $sideKey, $dimensionKey, 'value')); ?>">
             <select name="<?php esc_attr_e($this->getFieldName($field, $sideKey, $dimensionKey, 'unit')); ?>">
-                <?php foreach ($units as $unitKey => $unit): ?>
+                <?php foreach ($units as $unit): ?>
                     <option
-                            value="<?php esc_attr_e($unitKey); ?>"
-                        <?php if ($unitKey === $localUnit): ?>
+                            value="<?php esc_attr_e(trim($unit)); ?>"
+                        <?php if ($unit === $localUnit): ?>
                             selected
                         <?php endif; ?>
                     ><?php esc_html_e($unit); ?></option>
