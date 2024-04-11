@@ -1,0 +1,112 @@
+.flow-control-groups {
+    & > .flow-control-group {
+        border: 1px solid #999;
+        display: inline-grid;
+        grid-template-columns: auto 1px auto;
+        align-items: center;
+        column-gap: 15px;
+        padding-block: 0 !important;
+        padding-inline: 20px !important;
+        position: relative;
+        margin-top: 20px;
+
+        &.custom-values {
+            grid-template-columns: auto;
+
+            .divider {
+                display: none;
+            }
+
+            .custom-container {
+                display: none;
+            }
+        }
+
+        legend {
+            font-weight: 700;
+            padding: 0;
+            position: absolute;
+            top: -20px;
+        }
+
+        .presets {
+            height: 28px;
+            width: auto;
+            padding: 2px 15px;
+        }
+
+        & > *:not(legend, .divider) {
+            padding-block: 10px;
+        }
+
+        .preset-container,
+        .side-container {
+            display: grid;
+
+            & > span {
+                text-align: center;
+            }
+        }
+
+        .divider {
+            background-color: #999;
+            height: 100%;
+        }
+
+        .custom-container {
+            display: inline-grid;
+            grid-auto-flow: column;
+            column-gap: 5px;
+            align-items: center;
+        }
+
+        input[type=number] {
+            max-width: 10ch;
+        }
+
+        .number-and-unit-picker {
+            display: inline-grid;
+            grid-template-columns: 7ch 7ch;
+            border: 1px solid #999;
+            border-radius: 5px;
+            overflow: hidden;
+
+            & > input {
+                border: none;
+            }
+
+            & > input[type=number] {
+                text-align: end;
+            }
+
+            & > select {
+                background-color: #ccc;
+                text-align: center;
+                border: none;
+                padding: 0 24px 0 8px;
+            }
+        }
+
+        .link {
+            aspect-ratio: 1 / 1;
+            display: contents;
+
+            & > button {
+                display: inline-grid;
+                grid-template-areas: "same";
+                background: none;
+                border: none;
+                cursor: pointer;
+
+                & svg {
+                    width: 24px;
+                    grid-area: same;
+                }
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    }
+}

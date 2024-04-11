@@ -1,0 +1,12 @@
+{
+  "name": "vendi-advertising/vendi-acf-box-control",
+  "description": "ACF box control provides a way to control padding and margin of a box in a more user friendly way.",
+  "type": "library",
+  "license": "GPLv2",
+  "authors": [
+    {
+      "name": "Chris Haas",
+      "email": "chris@vendiadvertising.com"
+    }
+  ]
+}
