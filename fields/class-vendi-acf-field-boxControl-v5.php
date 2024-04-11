@@ -55,10 +55,10 @@ class Vendi_ACF_Field_Box_Control extends acf_field
         // Settings.
         $this->settings = $settings;
 
-//        $this->env = array(
-//            'url'     => site_url( str_replace( ABSPATH, '', __DIR__ ) ), // URL to the acf-FIELD-NAME directory.
-//            'version' => '1.0', // Replace this with your theme or plugin version constant.
-//        );
+        $this->env = array(
+            'url'     => site_url( str_replace( ABSPATH, '', __DIR__ ) ), // URL to the acf-FIELD-NAME directory.
+            'version' => '1.0.0', // Replace this with your theme or plugin version constant.
+        );
 
 //        $this->preview_image
 
@@ -66,13 +66,6 @@ class Vendi_ACF_Field_Box_Control extends acf_field
         parent::__construct();
     }
 
-    /**
-     * Render field settings.
-     *
-     * @param array $field Field details.
-     * @since 1.0.0
-     *
-     */
     public function render_field_settings(array $field): void
     {
         acf_render_field_setting(
@@ -133,11 +126,6 @@ class Vendi_ACF_Field_Box_Control extends acf_field
         <?php
     }
 
-    /**
-     * Load assets.
-     *
-     * @since 1.0.0
-     */
     public function input_admin_enqueue_scripts(): void
     {
         $url = $this->settings['url'];

@@ -103,7 +103,7 @@
         },
 
         run = (fields) => {
-            // console.log(fields.toArray());
+            console.log(fields.toArray());
             // debugger;
             fields
                 .toArray()
@@ -127,8 +127,8 @@
                 const acf = window.acf;
 
                 if (typeof acf.add_action !== 'undefined') {
-                    acf.add_action('ready_field/type=dimensions', run);
-                    acf.add_action('append_field/type=dimensions', run);
+                    acf.add_action('ready_field/type=vendi-acf-box-control', run);
+                    acf.add_action('append_field/type=vendi-acf-box-control', run);
                 }
             }
         }
